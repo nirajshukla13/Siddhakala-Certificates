@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
       <div class="main-container">
         <div class="certificate-container">
           <div class="logo-section">
-            <img src="/Siddhakala.png" alt="SIDDHAKALA AUTOMATIONS" class="company-logo">
+            <img src="/Siddhakala.png?v=2" alt="SIDDHAKALA AUTOMATIONS" class="company-logo">
           </div>
           
           <div class="validation-section">
