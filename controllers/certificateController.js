@@ -1,5 +1,6 @@
 const Certificate = require('../models/Certificate');
 const path = require('path');
+const QRCode = require('qrcode');
 
 // @desc    Verify certificate by ID
 // @route   GET /internship/verify/certificate/validate/:certificateId
@@ -137,3 +138,52 @@ exports.getAllCertificates = async (req, res) => {
     });
   }
 };
+
+// @desc    Generate QR Code for certificate
+// @route   GET /qrcode/:certificateId
+// @access  Public
+exports.generateQRCode = async (req, res) => {
+  try {
+    const { certificateId } = req.params;
+    
+    // Check if certificate exists
+    const certificate = await Certificate.findOne({ 
+      certificateId: certificateId.toUpperCase() 
+    });
+
+    if (!certificate) {
+      return res.status(404).json({
+        success: false,
+        message: 'Certificate not found'
+      });
+    }
+
+    // Generate the verification URL
+    const baseUrl = process.env.BASE_URL || 'https://certificate-verify-telm.onrender.com';
+    const verificationUrl = `${baseUrl}/internship/verify/certificate/validate/${certificate.certificateId}`;
+
+    // Generate QR code as PNG buffer
+    const qrCodeBuffer = await QRCode.toBuffer(verificationUrl, {
+      width: 300,
+      margin: 2,
+      color: {
+        dark: '#000000',
+        light: '#FFFFFF'
+      }
+    });
+
+    // Set headers and send image
+    res.setHeader('Content-Type', 'image/png');
+    res.setHeader('Content-Disposition', `inline; filename="qr-${certificate.certificateId}.png"`);
+    res.send(qrCodeBuffer);
+
+  } catch (error) {
+    console.error('Error generating QR code:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error generating QR code',
+      error: error.message
+    });
+  }
+};
+
