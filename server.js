@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Certificate Verification System - SIDDHAKALA AUTOMATIONS</title>
-      <link rel="icon" type="image/png" href="/Siddhakala Automations.png">
+      <link rel="icon" type="image/png" href="/siddhakala-automations.png">
       <link rel="stylesheet" href="/style.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
       <div class="main-container">
         <div class="certificate-container">
           <div class="logo-section">
-            <img src="/Siddhakala Automations.png" alt="SIDDHAKALA AUTOMATIONS" class="company-logo">
+            <img src="/siddhakala-automations.png" alt="SIDDHAKALA AUTOMATIONS" class="company-logo">
           </div>
           
           <div class="validation-section">
