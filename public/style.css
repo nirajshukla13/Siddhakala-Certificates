@@ -57,6 +57,10 @@ body {
   margin: 0 auto;
   padding: 10px 15px;
   animation: fadeIn 0.5s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 @keyframes fadeIn {
@@ -125,10 +129,13 @@ body {
 }
 
 .company-logo {
-  max-width: 180px;
+  max-width: 150px;
+  max-height: 80px;
   height: auto;
+  width: auto;
   display: block;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 /* Validation Section */
