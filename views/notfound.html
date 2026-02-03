@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Not Found</title>
+  <link rel="icon" type="image/png" href="/Siddhakala Automations.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader"></div>
+    <p>Verifying Certificate...</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container" id="content" style="display: none;">
+    <div class="certificate-container">
+      <div class="logo-section">
+        <img src="/Siddhakala Automations.png" alt="SIDDHAKALA AUTOMATIONS" class="company-logo">
+      </div>
+
+      <div class="validation-section error-section">
+        <h1 class="validation-title error-title">Certificate Not Found</h1>
+        
+        <div class="validation-message">
+          <p>The certificate you are trying to verify could not be found in our system.</p>
+          <p>Please verify the certificate ID and try again. If you believe this is an error, please contact the issuing organization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

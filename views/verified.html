@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Validated - {{certificateId}}</title>
+  <link rel="icon" type="image/png" href="/Siddhakala Automations.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader"></div>
+    <p>Verifying Certificate...</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container" id="content" style="display: none;">
+    <div class="certificate-container">
+      <div class="logo-section">
+        <img src="/Siddhakala Automations.png" alt="{{company}}" class="company-logo">
+      </div>
+
+      <div class="validation-section">
+        <h1 class="validation-title">Certificate Validated</h1>
+        
+        <div class="validation-message">
+          <p>This certificate is valid. Congratulations, <strong>{{name}}</strong>! You have successfully completed the internship in <strong>{{role}}</strong> from <strong>{{startDate}}</strong> to <strong>{{endDate}}</strong>.</p>
+          <p class="internship-note">This internship was focused on self-paced learning and task-based evaluation.</p>
+        </div>
+
+        <div class="certificate-details">
+          <div class="detail-item">
+            <span class="detail-label">Certificate ID:</span>
+            <span class="detail-value">{{certificateId}}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Company:</span>
+            <span class="detail-value">{{company}}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Internship Type:</span>
+            <span class="detail-value">{{internshipType}}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Issue Date:</span>
+            <span class="detail-value">{{issueDate}}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Status:</span>
+            <span class="detail-value status-verified">{{status}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
