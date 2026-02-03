@@ -144,11 +144,12 @@ body {
 }
 
 .validation-title {
-  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 15px;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   border-bottom: 4px solid #3b82f6;
   padding-bottom: 10px;
@@ -208,15 +209,17 @@ body {
 
 .detail-label {
   font-weight: 500;
-  color: #666;
+  color: #64748b;
   font-size: 13px;
+  letter-spacing: 0.5px;
 }
 
 .detail-value {
   font-weight: 600;
-  color: #1a1a1a;
+  color: #0f172a;
   font-size: 14px;
   text-align: right;
+  letter-spacing: 0.3px;
 }
 
 .status-verified {
