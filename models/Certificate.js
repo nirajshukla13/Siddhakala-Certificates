@@ -26,8 +26,8 @@ const certificateSchema = new mongoose.Schema({
   },
   internshipType: {
     type: String,
-    enum: ['Virtual Internship', 'Internship'],
-    default: 'Internship'
+    enum: ['Virtual Internship', 'Internship', 'Remote'],
+    default: 'Remote'
   },
   startDate: {
     type: String,
